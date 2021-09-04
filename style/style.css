@@ -1,0 +1,99 @@
+@font-face {
+  font-family: BentonSans;
+  src: url("../fonts/BentonSansBold.otf");
+}
+body {
+  background: black;
+  font-family: BentonSans;
+}
+.head {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+}
+.title {
+  color: red;
+  font-size: 60px;
+}
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: center/100% no-repeat url("../image/979291.jpg");
+  z-index: -1;
+  opacity: 0.4;
+  border: none;
+}
+.select {
+  height: 50px;
+  background: rgb(110, 110, 110);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 50px;
+  padding-left: 10px;
+}
+.logoMarvel {
+  width: 400px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+.cards-container {
+  max-width: 1280px;
+  margin: auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  width: 300px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
+}
+.span-select {
+  color: white;
+  font-size: 20px;
+  margin-right: 30px;
+}
+.imageHero {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  height: 50%;
+  padding: 10px 10px;
+  background: linear-gradient(to top, #000000, #000000, #0000000a);
+}
+h3 {
+  color: red;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  z-index: 5;
+}
+.real-name {
+  color: white;
+}
+.movies {
+  color: white;
+}
+.status {
+  color: white;
+}
+.characteristic {
+  color: red;
+}
+.character {
+  z-index: 5;
+}
