@@ -18,13 +18,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // добавление option в select
   const addOption = (arr) => {
-
     let movies = [];
     arr.forEach(elem => {
       movies = movies.concat(elem.movies);
     });
     const uniqMovies = Array.from(new Set(movies));
-
     uniqMovies.forEach(elem => {
       if (elem) {
         const option = document.createElement('option');
@@ -39,27 +37,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // создание карточки героя
   const creatCard = (element) => {
-    const card = document.createElement('div');
+    const card = document.createElement('div'),
+          img = document.createElement('img');
+    img.classList.add('imageHero');
+    img.src = element.photo;
+    img.alt = element.name;
+    img.onerror = () => {img.src = './image/notFound-removebg-preview.png';};
     card.classList.add('card');
     card.innerHTML = `
-      <img class="imageHero" src="${element.photo}" alt="${element.name}">
       <div class="hero-info">
         <h3>${element.name ? element.name : 'unknown'}</h3>
         <div class="character">
           <span class="characteristic">Real-name: </span>
-          <span class="real-name">${element.realName ? element.realName : 'unknown'}</span>
+          <span class="text">${element.realName ? element.realName : 'unknown'}</span>
         </div>
         <div class="character">
           <span class="characteristic">Movies: </span>
-          <span class="movies">${element.movies ? element.movies.join(', ') : 'unknown'}</span>
+          <span class="text">${element.movies ? element.movies.join(', ') : 'unknown'}</span>
         </div>
         <div class="character">
           <span class="characteristic">Status: </span>
-          <span class="status">${element.status ? element.status : 'unknown'}</span>
+          <span class="text">${element.status ? element.status : 'unknown'}</span>
         </div>
       </div>
     `;
     cardsContainer.append(card);
+    card.prepend(img);
   };
 
   // добавление всех карточек на страницу по дефолту
@@ -99,7 +102,8 @@ window.addEventListener('DOMContentLoaded', () => {
     .then(checkingHeroFromMovie)
     .catch(error => {
       console.warn(error);
-      alert('Sorry, not connection server. Try again.');
+      cardsContainer.style.background = `no-repeat center url(./image/notFound-removebg-preview.png) 
+      rgba(240, 237, 237, 0.15)`;
     });
 });
 

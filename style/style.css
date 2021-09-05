@@ -8,13 +8,8 @@ body {
 }
 .head {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-around;
   align-items: center;
-}
-.title {
-  color: red;
-  font-size: 60px;
 }
 .bg {
   position: fixed;
@@ -43,15 +38,15 @@ body {
   margin: auto auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  min-height: 50vh;
 }
 .card {
   width: 300px;
   height: 500px;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 30px;
   position: relative;
+  margin: 0 auto 30px auto;
 }
 .span-select {
   color: white;
@@ -62,11 +57,11 @@ body {
   width: 100%;
   position: absolute;
   z-index: 0;
+  background: rgba(236, 234, 234, 0.096);
 }
 .hero-info {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   position: absolute;
   top: 60%;
   width: 100%;
@@ -82,13 +77,7 @@ h3 {
   font-size: 20px;
   z-index: 5;
 }
-.real-name {
-  color: white;
-}
-.movies {
-  color: white;
-}
-.status {
+.text {
   color: white;
 }
 .characteristic {
